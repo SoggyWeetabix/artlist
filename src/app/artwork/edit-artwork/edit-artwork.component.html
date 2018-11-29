@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="button-container">
+    <button type="button" class="btn btn-link" [routerLink]="['/artwork/view', artPiece.id]">Back</button>
+  </div>
+  <form [formGroup]="artform" (ngSubmit)="submitEditedArtwork()" novalidate>
+    <div *ngIf="validMessage != ''">
+      <h3 class="has-info">{{validMessage}}</h3>
+    </div>
+    <div class="form-group">
+      <label>Artwork Name</label>
+      <input type="text" class="form-control" formControlName="name" required autofocus/>
+    </div>
+    <div class="form-group">
+      <label>Artist Name</label>
+      <input type="email" class="form-control" formControlName="artist" required/>
+    </div>
+    <div class="form-group">
+      <label>Year Painted</label>
+      <input type="text" class="form-control" formControlName="year" required/>
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <input type="text" class="form-control" formControlName="price" required/>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea class="form-control" rows="4" formControlName="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label>Image URL</label>
+      <input type="text" class="form-control" formControlName="url" required/>
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Change</button>
+  </form>
+  
+</div>

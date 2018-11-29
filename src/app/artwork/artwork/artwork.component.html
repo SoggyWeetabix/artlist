@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table table-bordered table-inverse">
+    <tr>
+      <th>Image</th>
+      <th>Artwork Name</th>
+      <th>Artist</th>
+      <th>Year Painted</th>
+      <th>Purchase Price</th>
+    </tr>
+    <tr *ngFor="let art of artwork">
+      <td>
+          <a [routerLink]="['/artwork/view', art.id]"><img src={{art.url}} width="100"></a>
+      </td>
+      <td>
+        <a [routerLink]="['/artwork/view', art.id]">{{art.name}}</a>
+      </td>
+      <td>
+        <a [routerLink]="getUrl(art.artist)">{{art.artist}}</a>
+      </td>
+      <td>
+        {{art.year}}
+      </td>
+      <td>
+        {{art.price | currency:'GBP'}}
+      </td>
+    </tr>
+  </table>
+</div>

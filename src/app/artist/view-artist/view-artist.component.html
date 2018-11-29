@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <button type="button" class="btn btn-link" routerLink="/artwork">Back to List</button>
+  </div>
+  <div class="art-container" style="text-align: center;">
+    <img [src]="artist.url" width="300">
+    <h2>{{artist.name}}</h2>
+    <div class="art-container-left" style="display: inline-block; text-align: left;">
+      <h6>Year Born: {{artist.year}}</h6>
+      <h6>Nationality: {{artist.nationality}}</h6>
+      <p>{{artist.description}}</p>
+    </div>
+  </div>
+<div class="button-container" align="right">
+  <button type="button" class="btn btn-dark" [routerLink]="['/artist/edit', artist.id]">Edit Artist</button>
+  <button type="button" class="btn btn-danger">Delete Artist</button>
+</div>
+</div>

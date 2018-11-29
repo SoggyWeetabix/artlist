@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+      <button type="button" class="btn btn-link" routerLink="/artwork">Back to List</button>
+    </div>
+    <div *ngIf="warning != ''">
+        <h3 class="has-info">{{warning}}</h3>
+      </div>
+    <div class="art-container" style="text-align: center;">
+      <img src={{artPiece.url}} width="300">
+      <h1>{{artPiece.name}}</h1>
+      <h3>by {{artPiece.artist}}</h3>
+      <div class="art-container-left" style="display: inline-block; text-align: left;">
+        <h6>Year: {{artPiece.year}}</h6>
+        <h6>Price: {{artPiece.price | currency:'GBP'}}</h6>
+        <p>{{artPiece.description}}</p>
+      </div>
+    </div>
+  <div class="button-container" align="right">
+    <button type="button" class="btn btn-dark" [routerLink]="['/artwork/edit', artPiece.id]">Edit Artwork</button>
+    <button type="button" class="btn btn-danger" (click)="delete(artPiece.id)" >Delete Artwork</button>
+  </div>
+</div>
